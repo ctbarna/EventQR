@@ -1,22 +1,31 @@
+/**
+ * qr.js
+ * @author Chris Barna <chris@unbrain.net>
+ **/
+
 // Some of the base URL variables.
 var base = "http://m.scu.edu/events/?eventid=";
-var campaign = "CareerCenter";
+var ga_campaign = "CareerCenter";
+
+// QR Settings
+var qr_size = 200;
+var base_qr = "http://chart.apis.google.com/chart?chs="+qr_size+"x"+qr_size+"&cht=qr&chl=";
 
 document.onkeydown = function(event) {
     if(event.keyCode == 81) {
 	url = formURL(getEventId(), "QR", "poster");
-	var src = "http://chart.apis.google.com/chart?chs=200x200&cht=qr&chl="+url;
+	var src = base_qr+url;
 	document.getElementById("QR-code").src = src;
 	document.getElementById("QR").style.display = 'block';
     }	    
 }
 
 function changeImage(value) {
-    document.getElementById("QR-code").src = "http://chart.apis.google.com/chart?chs=200x200&cht=qr&chl="+formURL(getEventId(), 'QR', value);
+    document.getElementById("QR-code").src = base_qr+formURL(getEventId(), 'QR', value);
 }
 
-function formURL(eventid, campaign, medium) {
-    var url = "http://m.scu.edu/events/?eventid="+eventid+"%26utm_source="+campaign+"%26utm_medium="+medium+"%26=utm_campaign=CareerCenter";
+function formURL(eventid, source, medium) {
+    var url = base+eventid+"%26utm_source="+source+"%26utm_medium="+medium+"%26=utm_campaign="+ga_campaign;
     return url;
 }
 
