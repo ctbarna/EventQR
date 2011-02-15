@@ -11,6 +11,7 @@ var ga_campaign = "CareerCenter";
 var qr_size = 200;
 var base_qr = "http://chart.apis.google.com/chart?chs="+qr_size+"x"+qr_size+"&cht=qr&chl=";
 
+// Set event listener for the 'q' key.
 document.onkeydown = function(event) {
     if(event.keyCode == 81) {
 	url = formURL(getEventId(), "QR", "poster");
@@ -24,14 +25,30 @@ function changeImage(value) {
     document.getElementById("QR-code").src = base_qr+formURL(getEventId(), 'QR', value);
 }
 
+// Form the URL to be passed to Google with utm codes
 function formURL(eventid, source, medium) {
     var url = base+eventid+"%26utm_source="+source+"%26utm_medium="+medium+"%26=utm_campaign="+ga_campaign;
     return url;
 }
 
+// Return the event ID.
 function getEventId() {
-    var url = location.href.split('=');
-    return url[1];
+    vars = getUrlVars();
+    return vars["event"];
+}
+
+// Get the URL encoded values. (http://snipplr.com/view/799/get-url-variables/)
+function getUrlVars() {
+    var vars  = [], hash;
+    var hashes = window.location.href.slice(window.location.href.indexOf('?') +1).split('&');
+
+    for (var i = 0; i < hashes.length; i++) {
+	hash = hashes[i].split('=');
+	vars.push(hash[0]);
+	vars[hash[0]] = hash[1];
+    }
+
+    return vars;
 }
 
 // Unrelated javascript. Hides an element on the CC website.
