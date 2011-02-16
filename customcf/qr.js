@@ -16,6 +16,7 @@ var base_qr = "http://chart.apis.google.com/chart?chs="+qr_size+"x"+qr_size+"&ch
 document.onkeydown = function(event) {
     if(event.keyCode == 81) {
 	url = formURL(getEventId(), "QR", "ga_medium");
+	ga_campaign = generateCampaignName();
 	var src = base_qr+url;
 	document.getElementById("QR-code").src = src;
 	document.getElementById("QR").style.width = qr_size+"px";
@@ -62,6 +63,12 @@ function getUrlVars() {
     }
 
     return vars;
+}
+
+// Split URL at slashes to generate GA campaign.
+function generateCampaignName() {
+    var splitURL = window.location.href.split('/');
+    alert(splitURL[3]);
 }
 
 // Unrelated javascript. Hides an element on the CC website.
