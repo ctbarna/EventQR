@@ -68,7 +68,7 @@ function getUrlVars() {
 // Split URL at slashes to generate GA campaign.
 function generateCampaignName() {
     var splitURL = window.location.href.split('/');
-    alert(splitURL[3]);
+    return splitURL[3];
 }
 
 // Unrelated javascript. Hides an element on the CC website.
