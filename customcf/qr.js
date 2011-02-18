@@ -15,7 +15,7 @@ var base_qr = "http://chart.apis.google.com/chart?chs="+qr_size+"x"+qr_size+"&ch
 // Set event listener for the 'q' key.
 document.onkeydown = function(event) {
     if(event.keyCode == 81) {
-	url = formURL(getEventId(), "QR", "ga_medium");
+	url = formURL(getEventId(), "QR", ga_medium);
 	var src = base_qr+url;
 	document.getElementById("QR-code").src = src;
 	document.getElementById("QR").style.width = qr_size+"px";
