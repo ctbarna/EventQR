@@ -12,7 +12,7 @@ This is an HTML/Javascript snippet to generate a QR code in a small overlay on a
 2. Submit your page and press 'q'!
 
 ## Support
-All questions, comments, concerns can be addressed to chris@unbrain.net.
+All questions, comments, concerns can be addressed to <chris@unbrain.net>.
 
 ## License
     Copyright 2011 Chris Barna 
