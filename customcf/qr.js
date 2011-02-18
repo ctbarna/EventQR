@@ -12,6 +12,18 @@ var ga_medium = "poster";
 var qr_size = 200;
 var base_qr = "http://chart.apis.google.com/chart?chs="+qr_size+"x"+qr_size+"&cht=qr&chl=";
 
+// GA Mediums
+var mediums = ["Posters", "Benson Screens"];
+
+window.onload = function() {
+    for (i=0; i < mediums.length; i++) {
+	var option = document.createElement("option");
+	option.innerHTML = mediums[i];
+	option.value = mediums[i].replace(" ", "+");
+	document.getElementById("QR-select").appendChild(option);
+    }
+}
+
 // Set event listener for the 'q' key.
 document.onkeydown = function(event) {
     if(event.keyCode == 81) {
