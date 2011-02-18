@@ -2,6 +2,15 @@
 
 This is an HTML/Javascript snippet to generate a QR code in a small overlay on an event page on the Santa Clara University's [Career Center Calendar](http://scu.edu/careercenter/event.cfm). The overlay is triggered from a keydown event window (defaults to 'q').
 
+## Features
+* Provides a QR that directs a user to the event mobile SCU calendar.
+* Integrated Google Analytics campaign statistics allow for tracking across departments and advertising medias.
+* Codes are resizable up to 400x400 pixels.
+
+## Usage
+1. To include the QR code generator, add a custom script element anywhere on your events page and set the script path to "/careercenter/customcf/live-qr.cfm".
+2. Submit your page and press 'q'!
+
 ## License
     Copyright 2011 Chris Barna 
 
