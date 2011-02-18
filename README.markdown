@@ -11,6 +11,9 @@ This is an HTML/Javascript snippet to generate a QR code in a small overlay on a
 1. To include the QR code generator, add a custom script element anywhere on your events page and set the script path to "/careercenter/customcf/live-qr.cfm".
 2. Submit your page and press 'q'!
 
+## Support
+All questions, comments, concerns can be addressed to chris@unbrain.net.
+
 ## License
     Copyright 2011 Chris Barna 
 
