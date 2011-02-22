@@ -17,9 +17,21 @@
  **/
 
 // Some of the base URL variables.
-var base = "http://m.scu.edu/events/?eventid=";
+var base;
+var base_choice = new Array();
+
+base_choice[0] = "http://m.scu.edu/events/?eventid=";
+base_choice["careercenter"] = "http://m.scu.edu/careercenter/?eventid=";
+
+// Google Analytics info.
 var ga_campaign = generateCampaignName();
 var ga_medium = "poster";
+
+if (base_choice[generateCampaignName()] != undefined) {
+    base = base_choice[generateCampaignName()];
+} else {
+    base = base_choice[0];
+}
 
 // QR Settings
 var qr_size = 200;
