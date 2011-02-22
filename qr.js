@@ -25,8 +25,10 @@ base_choice["careercenter"] = "http://m.scu.edu/careercenter/?eventid=";
 
 // Google Analytics info.
 var ga_campaign = generateCampaignName();
-var ga_medium = "poster";
+var mediums = ["Posters", "Benson Screens"];
+var ga_mediums = mediums[0];
 
+// Set the Base URL to something custom.
 if (base_choice[generateCampaignName()] != undefined) {
     base = base_choice[generateCampaignName()];
 } else {
@@ -37,9 +39,7 @@ if (base_choice[generateCampaignName()] != undefined) {
 var qr_size = 200;
 var base_qr = "http://chart.apis.google.com/chart?chs="+qr_size+"x"+qr_size+"&cht=qr&chl=";
 
-// GA Mediums
-var mediums = ["Posters", "Benson Screens"];
-
+// Append the div upon load.
 window.onload = function() {
     for (i=0; i < mediums.length; i++) {
 	var option = document.createElement("option");
@@ -60,6 +60,7 @@ document.onkeydown = function(event) {
     }	    
 }
 
+// Functions to change the image.
 function changeImage(value) {
     ga_medium = value;
     document.getElementById("QR-code").src = base_qr+formURL(getEventId(), 'QR', value);
